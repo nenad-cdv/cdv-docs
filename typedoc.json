@@ -1,0 +1,7 @@
+{
+  "entryPoints": ["../../packages/api/src/index.ts"],
+  "out": "docs/api/generated",
+  "plugin": ["typedoc-plugin-markdown"],
+  "exclude": ["**/__tests__/**", "**/*.spec.ts"],
+  "includeVersion": true
+}
