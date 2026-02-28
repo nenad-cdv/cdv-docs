@@ -11,6 +11,7 @@
 ---
 
 <a name="getting-started"></a>
+
 ## Getting Started
 
 Thank you for your interest in contributing to FastKit Core! This document will guide you through the process.
@@ -20,9 +21,9 @@ Thank you for your interest in contributing to FastKit Core! This document will 
 FastKit Core is a lightweight toolkit that adds structure and common patterns to FastAPI. Before contributing, we recommend:
 
 1. **Read the documentation**
-   - [Quick Start Guide](/docs/quick_start.md)
-   - [Database Guide](/docs/database.md)
-   - [Services Guide](/docs/services.md)
+   - [Quick Start Guide](quick_start.md)
+   - [Database Guide](database.md)
+   - [Services Guide](services.md)
 
 2. **Understand the core architecture**
    - Repository Pattern
@@ -47,6 +48,7 @@ You can contribute in several ways:
 ---
 
 <a name="development-setup"></a>
+
 ## Development Setup
 
 ### Fork and Clone
@@ -126,6 +128,7 @@ black fastkit_core
 ---
 
 <a name="making-changes"></a>
+
 ## Making Changes
 
 ### Branch Naming Convention
@@ -143,6 +146,7 @@ git checkout -b refactor/your-refactoring
 ```
 
 **Examples:**
+
 - `feature/add-soft-delete-mixin`
 - `fix/repository-pagination-bug`
 - `docs/update-api-examples`
@@ -157,6 +161,7 @@ git checkout -b refactor/your-refactoring
    - Keep code simple and focused
 
 2. **Commit message format**
+
    ```bash
    # Good commit message format
    git commit -m "feat: add TranslatableMixin to models"
@@ -165,6 +170,7 @@ git checkout -b refactor/your-refactoring
    ```
 
 3. **Before committing**
+
    ```bash
    # Format code
    black fastkit_core tests
@@ -189,6 +195,7 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/) specific
 **Format:** `<type>(<scope>): <subject>`
 
 **Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -199,6 +206,7 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/) specific
 - `chore`: Build/process/tooling changes
 
 **Examples:**
+
 ```bash
 feat(repository): add support for bulk operations
 fix(validation): handle None values in custom validators
@@ -209,6 +217,7 @@ test(database): add tests for soft delete mixin
 ---
 
 <a name="testing"></a>
+
 ## Testing
 
 ### Running Tests
@@ -233,6 +242,7 @@ pytest --cov=fastkit_core --cov-report=html
 ### Writing Tests
 
 1. **Test file location**
+
    ```
    fastkit_core/
        repository.py
@@ -241,6 +251,7 @@ pytest --cov=fastkit_core --cov-report=html
    ```
 
 2. **Test example**
+
    ```python
    import pytest
    from fastkit_core.database import Repository
@@ -283,6 +294,7 @@ pytest --cov=fastkit_core --cov-report=term-missing
 ---
 
 <a name="code-style"></a>
+
 ## Code Style
 
 FastKit Core uses the following tools to ensure code quality:
@@ -334,6 +346,7 @@ pre-commit install
 ```
 
 Create `.pre-commit-config.yaml`:
+
 ```yaml
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
@@ -353,11 +366,13 @@ repos:
 ---
 
 <a name="submitting-changes"></a>
+
 ## Submitting Changes
 
 ### Pull Request Process
 
 1. **Ensure your branch is up to date**
+
    ```bash
    git checkout main
    git pull upstream main
@@ -366,6 +381,7 @@ repos:
    ```
 
 2. **Push to your fork**
+
    ```bash
    git push origin your-branch
    ```
@@ -379,24 +395,30 @@ repos:
 
 ```markdown
 ## Description
+
 Brief description of your changes
 
 ## Type of Change
+
 - [ ] Bug fix (non-breaking change which fixes an issue)
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] Documentation update
 
 ## Related Issue
+
 Fixes #issue_number
 
 ## How Has This Been Tested?
+
 Please describe your test scenarios:
+
 - [ ] Test scenario 1
 - [ ] Test scenario 2
 - [ ] Test scenario 3
 
 ## Checklist:
+
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented my code, particularly in hard-to-understand areas
@@ -423,6 +445,7 @@ Please describe your test scenarios:
 ---
 
 <a name="release-process"></a>
+
 ## Release Process
 
 ### Version Numbering
@@ -449,7 +472,7 @@ Example: `0.3.2` → `0.4.0`
 
 ### Resources
 
-- **Documentation**: [docs/README.md](/docs/README.md)
+- **Documentation**: [docs/README.md](README.md)
 - **GitHub Issues**: [Report bugs or ask questions](https://github.com/codevelo-pub/fastkit-core/issues)
 
 ### Contact

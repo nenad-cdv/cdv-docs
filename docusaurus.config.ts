@@ -16,7 +16,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://codevelo.io",
+  url: "https://docs.codevelo.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -25,7 +25,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "Codevelo", // Usually your GitHub org/user name.
+  organizationName: "codevelo-pub", // Usually your GitHub org/user name.
   projectName: "cdv-docs", // Usually your repo name.
 
   onBrokenLinks: "throw",
@@ -104,7 +104,7 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://github.com/yourorg/cdv-docs",
+          href: "https://github.com/codevelo-pub",
           label: "GitHub",
           position: "right",
         },
