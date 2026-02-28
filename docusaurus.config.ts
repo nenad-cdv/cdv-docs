@@ -6,7 +6,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Codevelo Docs",
-  tagline: "Dinosaurs are cool",
+  tagline:
+    "Expert software consulting and development services to help businesses build smarter, scale faster, and reduce costs.",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -19,6 +20,8 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
+  trailingSlash: false,
+  staticDirectories: ["static"],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -36,41 +39,17 @@ const config: Config = {
     locales: ["en"],
   },
 
-  plugins: [
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        redirects: [{ from: "/", to: "/web/overview" }],
-      },
-    ],
-  ],
+  plugins: [],
 
   presets: [
     [
       "classic",
       {
         docs: {
+          routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ["rss", "atom"],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          // Useful options to enforce blogging best practices
-          onInlineTags: "warn",
-          onInlineAuthors: "warn",
-          onUntruncatedBlogPosts: "warn",
-        },
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -78,24 +57,47 @@ const config: Config = {
     ],
   ],
 
+  themes: [
+    [
+      "@cmfcmf/docusaurus-search-local",
+      {
+        indexDocs: true,
+        indexBlog: false,
+        language: "en",
+      },
+    ],
+  ],
   themeConfig: {
-    // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
-    colorMode: {
-      respectPrefersColorScheme: true,
+    docs: {
+      sidebar: {
+        autoCollapseCategories: true,
+      },
     },
     navbar: {
       title: "",
-      logo: { alt: "Codevelo Logo", src: "img/logo.svg" },
+      logo: { alt: "Codevelo Logo", src: "img/logo.svg", width: 160 },
       items: [
-        { type: "doc", docId: "web/overview", position: "left", label: "Web" },
         {
           type: "doc",
-          docId: "mobile/overview",
+          docId: "initial/README",
+          position: "left",
+          label: "Getting Started",
+        },
+        { type: "doc", docId: "web/README", position: "left", label: "Web" },
+        {
+          type: "doc",
+          docId: "mobile/README",
           position: "left",
           label: "Mobile",
         },
-        { type: "doc", docId: "api/overview", position: "left", label: "API" },
+        { type: "doc", docId: "api/README", position: "left", label: "API" },
+        {
+          type: "doc",
+          docId: "fastKit/README",
+          position: "left",
+          label: "FastKit",
+        },
         {
           href: "https://codevelo.io",
           label: "Codevelo",
@@ -106,56 +108,35 @@ const config: Config = {
           label: "GitHub",
           position: "right",
         },
+        { type: "search", position: "right" },
       ],
     },
     footer: {
       style: "dark",
-      links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Tutorial",
-              to: "/docs/intro",
-            },
-          ],
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "X",
-              href: "https://x.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
-          ],
-        },
-      ],
-      copyright: `© ${new Date().getFullYear()} Codevelo`,
+    },
+
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.vsDark,
+      darkTheme: prismThemes.vsDark,
+      additionalLanguages: [
+        "bash",
+        "typescript",
+        "javascript",
+        "json",
+        "jsx",
+        "tsx",
+        "java",
+        "kotlin",
+        "swift",
+        "ruby",
+        "python",
+        "csharp",
+      ],
     },
   } satisfies Preset.ThemeConfig,
 };

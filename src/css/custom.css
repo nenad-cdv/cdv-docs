@@ -1,30 +1,116 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* =========================
+   CODEVELO × DOCUSAURUS THEME
+   ========================= */
 
-/* You can override the default Infima variables here. */
+/* Light theme */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #8a73e8;
+  --ifm-color-primary-dark: #7a62e0;
+  --ifm-color-primary-darker: #6f58db;
+  --ifm-color-primary-light: #9a86ee;
+  --ifm-color-primary-lighter: #a695f3;
+
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: #1e1e1e;
+
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #1e1e1e; /* dark base for footer */
+  --ifm-footer-text-color: #ffffff;
+  --ifm-footer-muted: rgba(255, 255, 255, 0.7);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+/* =========================
+   Local Search Styling
+   ========================= */
+.theme-search-local-searchbar {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid var(--ifm-color-primary);
+  padding: 0.3rem 0.6rem;
+  transition: all 0.3s ease;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.theme-search-local-searchbar input {
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  width: 160px;
+  padding: 0.3rem 0.5rem;
+  background-color: transparent;
+  color: var(--ifm-font-color-base);
+}
+
+.theme-search-local-searchbar svg {
+  margin-right: 0.5rem;
+  fill: var(--ifm-color-primary);
+}
+
+.theme-search-local-searchbar:focus-within {
+  border-color: var(--ifm-color-primary-darker);
+  box-shadow: 0 0 0 3px rgba(138, 115, 232, 0.3); /* optional, still purple glow */
+}
+
+.theme-search-local-suggestion-list {
+  margin-top: 0.25rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: var(--ifm-background-color);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.theme-search-local-suggestion-list li {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+}
+
+.theme-search-local-suggestion-list li:hover {
+  background-color: rgba(138, 115, 232, 0.1);
+}
+
+.theme-search-local-suggestion-highlight {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+/* =========================
+   Footer Customization
+   ========================= */
+footer.footer {
+  background-color: var(--ifm-footer-background-color);
+  color: var(--ifm-footer-text-color);
+  padding: 3rem 1rem;
+}
+
+footer.footer a {
+  color: var(--ifm-footer-text-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+footer.footer a:hover {
+  color: var(--ifm-color-primary);
+}
+
+footer.footer h4 {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer.footer .footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-footer-muted);
 }

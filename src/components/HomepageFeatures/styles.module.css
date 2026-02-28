@@ -1,11 +1,32 @@
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+.featureCard {
+  background-color: #f9f9ff;
+  margin: 1rem 0;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.featureCard:hover {
+  transform: translateY(-5px);
+}
+
+/* Scalable image container */
+.scalableImageContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Features grid */
+.features {
+  padding: 2rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .col.col--6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
